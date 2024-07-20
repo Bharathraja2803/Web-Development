@@ -1,0 +1,24 @@
+body {
+    background-color: #023047;
+}
+
+button {
+    color: #ffb703;
+    border: #ffb703 solid 0.1rem;
+    /* background-color: rgba(255, 255, 255, 0); */
+    background: none;
+    transition: 0.25s;
+    padding: 1rem 2em;
+}
+
+div {
+    margin-left: 50%;
+    margin-top: 20%;
+}
+
+button:hover {
+    color: white;
+    border-color: rgb(255, 255, 0);
+    transform: translateY(-0.25rem);
+    box-shadow: .1rem .1rem .1rem .1rem rgba(255, 255, 0, 1);
+}

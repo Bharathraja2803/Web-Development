@@ -1,0 +1,48 @@
+@media (max-width: 500px) {
+    body {
+        background-color: black;
+    }
+
+    h1 {
+        color: rgb(82, 255, 166);
+        scale: 0.7;
+    }
+
+    a {
+        color: cadetblue;
+    }
+}
+
+@media (max-width: 450px) {
+
+    nav,
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 0.2em white solid;
+    }
+
+}
+
+
+
+ul,
+li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    border: .2em black solid;
+    max-width: 50%;
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
