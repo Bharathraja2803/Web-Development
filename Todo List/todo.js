@@ -56,3 +56,26 @@ while (command && command !== "Quit") {
     }
     command = prompt("Enter the command");
 }
+
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']; //PLEASE DON'T CHANGE THIS LINE!
+
+//YOUR CODE GOES HERE:
+const spanLetters = document.querySelectorAll("span");
+count = 0;
+console.log(spanLetters);
+for (let letter of spanLetters) {
+    letter.style.color = colors[count++];
+}
+
+const lists = document.querySelectorAll("li");
+for (let elements of lists) {
+    elements.classList.toggle("highlight");
+}
+
+let container = document.querySelector("#container")
+
+for (let i = 0; i < 100; i++) {
+    let button = document.createElement("button");
+    button.textContent = "Save"
+    container.append(button);
+}
