@@ -1,0 +1,42 @@
+div #player1Score {
+    display: block;
+    text-align: center;
+}
+
+div #maxScore {
+    display: block;
+}
+
+div #player2Score {
+    display: block;
+    text-align: center;
+}
+
+
+.container {
+    display: block;
+}
+
+#scoreTable {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#shuttle-img {
+    margin-bottom: 3em;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    border-radius: 50%;
+    width: 500px;
+}
+
+#maxScore {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    justify-content: space-around;
+}
