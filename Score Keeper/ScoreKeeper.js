@@ -8,6 +8,7 @@ const resetBtn = document.querySelector("#resetButton");
 player1PointBtn.disabled = true;
 player2PointBtn.disabled = true;
 resetBtn.disabled = true;
+let flag = false;
 
 startBtn.addEventListener("click", function () {
     if (winningScore.value === "0") {
@@ -18,6 +19,7 @@ startBtn.addEventListener("click", function () {
         player2PointBtn.disabled = false;
         startBtn.disabled = true;
         resetBtn.disabled = false;
+        flag = true;
     }
 });
 
@@ -32,13 +34,15 @@ resetBtn.addEventListener("click", function () {
     resetBtn.disabled = true;
     player1PointBtn.disabled = true;
     player2PointBtn.disabled = true;
+    flag = false;
 });
 
-function start() {
-    winningScore.disabled = true;
-    player1PointBtn.disabled = false;
-    player2PointBtn.disabled = false;
-}
+// function start() {
+//     winningScore.disabled = true;
+//     player1PointBtn.disabled = false;
+//     player2PointBtn.disabled = false;
+
+// }
 
 function checkSetValue() {
     if (parseInt(player2Point.innerText) < parseInt(winningScore.value) && parseInt(player1Point.innerText) < parseInt(winningScore.value)) {
@@ -49,14 +53,14 @@ function checkSetValue() {
 
 player1PointBtn.addEventListener("click", function (e) {
 
-    player1Point.innerText = parseInt(player1Point.innerText) + 1;
+    incrementPlayerScore(player1Point);
     checkWinning();
 
 });
 
 player2PointBtn.addEventListener("click", function (e) {
 
-    player2Point.innerText = parseInt(player2Point.innerText) + 1;
+    incrementPlayerScore(player2Point);
     checkWinning();
 
 });
@@ -70,6 +74,7 @@ function checkWinning() {
 function setWinningColor() {
     player1PointBtn.disabled = true;
     player2PointBtn.disabled = true;
+    flag = false;
     if (parseInt(player1Point.innerText) === parseInt(winningScore.value)) {
         player1Point.style.color = "green";
         player2Point.style.color = "red";
@@ -78,3 +83,22 @@ function setWinningColor() {
         player2Point.style.color = "green";
     }
 }
+
+function incrementPlayerScore(playerPoint) {
+    playerPoint.innerText = parseInt(playerPoint.innerText) + 1;
+}
+
+window.addEventListener("keydown", function (e) {
+    if (flag) {
+        switch (e.code) {
+            case "ArrowLeft":
+                incrementPlayerScore(player1Point);
+                checkWinning();
+                break;
+            case "ArrowRight":
+                incrementPlayerScore(player2Point);
+                checkWinning();
+                break;
+        }
+    }
+})
